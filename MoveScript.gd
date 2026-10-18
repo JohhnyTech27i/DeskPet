@@ -1,8 +1,11 @@
 extends Node2D
 
+#Problems to solve: How to make so that the character can move with the left click
+# Optimize the code
+
 #Variables
 var speed = 300
-var direction = Vector2(1,1)
+var direction = Vector2(1,0)
 
 var screen_size = Vector2()
 var window_size = Vector2(200,200)
@@ -13,19 +16,33 @@ var is_idling = false
 var is_dragging = false
 var drag_offset = Vector2()
 
+
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var area = $Area2D
 
+
 func _on_area_input(_viewport, event, _shape_idx):
+	
+	if event is InputEventMouseMotion:
+		$AnimatedSprite2D.flip_h = DisplayServer.mouse_get_position().x < DisplayServer.window_get_position().x + 100
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
 			is_dragging = true
 			var mouse_pos = Vector2(DisplayServer.mouse_get_position())
 			var win_pos = Vector2(DisplayServer.window_get_position())
 			drag_offset = mouse_pos - win_pos
+			
+			$AudioStreamPlayer2D.play()
+			
+			#OS.shell_open("https://hackclub.com")
+			
+			var time = Time.get_datetime_dict_from_system()
+			$Label.text = "%02d:%02d" % [time.hour, time.minute]
+			
 		else:
+			$Label.text = ""
 			is_dragging = false
-
+	
 # Sets conditiosn at the beginning of the program
 func _ready():
 	screen_size = Vector2(DisplayServer.screen_get_size())
