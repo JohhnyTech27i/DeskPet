@@ -62,7 +62,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ev212"]
 size = Vector2(33, 33)
 
-[node name="Main_Scene" type="Node2D" unique_id=1144371327]
+[node name="Sans" type="Node2D" unique_id=1144371327]
 script = ExtResource("1_2c62f")
 
 [node name="Label" type="Label" parent="." unique_id=690098048]
@@ -70,8 +70,10 @@ offset_left = 63.0
 offset_top = 16.0
 offset_right = 103.0
 offset_bottom = 39.0
+theme_override_colors/font_shadow_color = Color(0.6464894, 0.6386191, 0.8684434, 0)
+theme_override_font_sizes/font_size = 12
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=311694536]
+[node name="Sans" type="AnimatedSprite2D" parent="." unique_id=311694536]
 position = Vector2(86, 90)
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_gyfs4")
@@ -86,3 +88,10 @@ shape = SubResource("RectangleShape2D_ev212")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=941477118]
 stream = ExtResource("3_gyfs4")
+
+[node name="PopupMenu" type="PopupMenu" parent="." unique_id=1138420766]
+oversampling_override = 1.0
+
+[node name="Timer" type="Timer" parent="." unique_id=1427514616]
+wait_time = 3.0
+autostart = true
