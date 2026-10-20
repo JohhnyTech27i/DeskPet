@@ -1,4 +1,5 @@
 Cool Sans Desktop pet
+--------------------
 This repo holds the code for a software that allows you to have sans run in your desktop.
 
 Features
