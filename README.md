@@ -15,5 +15,9 @@ Features
   - Press R to resume the timer
  
   Note: When downloading the project on itch.io, your computer might not let you so press run anyway, because this program is not a virus, it is just that it doesn't identify the publisher.
-  
-  Characters are from undertale which belongs to toby fox!
+
+  Credits
+  ----
+ -Toby fox for his sans sound and character sprites
+ - @froppii  and  @armand for the majority of the code and for the guide that they had.
+ - Link is https://playground.hackclub.com/stardance/setup
